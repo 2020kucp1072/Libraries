@@ -54,6 +54,16 @@ def create_border_array():
     arr = np.ones((5, 5))
     arr[1:-1, 1:-1] = 0
     return arr
+def add_border_zeros(arr):
+    """
+    Description:
+        This function adds a border filled with 0's around the existing array.
+    Parameters:
+        arr: Input 2D array.
+    Return:
+        New array with border of 0's.
+    """
+    return np.pad(arr, pad_width=1, mode='constant', constant_values=0)
 
 def main():
     # 1. Convert list to one-dimensional numpy array
@@ -69,7 +79,9 @@ def main():
     log.info(f"Reversed array:\n{reverse_array(arr_to_reverse)}")
     # 5. Create 2D array with 1 on the border and 0 inside
     log.info(f"2D Array with border of 1:\n{create_border_array()}")
-
+    # 6. Add border of 0's around an existing array
+    existing_array = np.array([[1, 1, 1], [1, 0, 1], [1, 1, 1]])
+    log.info(f"Array with border of 0's:\n{add_border_zeros(existing_array)}")
 # Entry point
 if __name__ == "__main__":
     main()
