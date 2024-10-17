@@ -255,6 +255,18 @@ def make_array_read_only(arr):
     arr.setflags(write=False)
     return arr
 
+def multiply_elements(arr, factor):
+    """
+    Description:
+        This function multiplies every element of the array by a given factor.
+    Parameters:
+        arr: Input array.
+        factor: Multiplication factor.
+    Return:
+        New array with multiplied elements.
+    """
+    return arr * factor
+
 
 
 
@@ -324,6 +336,9 @@ def main():
     # 22. Make an array read-only
     read_only_arr = make_array_read_only(arr_info.copy())
     log.info(f"Read-Only Array:\n{read_only_arr}")
+    # 23. Multiply elements of an array
+    log.info(f"Array after multiplication:\n{multiply_elements(arr_info, 2)}")
+
 
 # Entry point
 if __name__ == "__main__":
