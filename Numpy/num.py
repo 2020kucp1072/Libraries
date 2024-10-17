@@ -112,6 +112,18 @@ def real_imaginary_parts(arr):
     """
     return np.real(arr), np.imag(arr)
 
+def array_memory_info(arr):
+    """
+    Description:
+        This function finds the number of elements, length of one element in bytes,
+        and total bytes consumed by the elements of the array.
+    Parameters:
+        arr: Input array.
+    Return:
+        Tuple with size, length of one element in bytes, and total bytes consumed.
+    """
+    return arr.size, arr.itemsize, arr.nbytes
+
 def main():
     # 1. Convert list to one-dimensional numpy array
     original_list = [12.23, 13.32, 100, 36.32]
@@ -144,6 +156,10 @@ def main():
     complex_arr = np.array([1 + 0j, 0.707 + 0.707j])
     real_part, imag_part = real_imaginary_parts(complex_arr)
     log.info(f"Real Part: {real_part}, Imaginary Part: {imag_part}")
+    # 11. Find size, length of one element in bytes, and total bytes consumed
+    arr_info = np.array([1, 2, 3], dtype=np.float64)
+    size, itemsize, nbytes = array_memory_info(arr_info)
+    log.info(f"Array Info - Size: {size}, Item Size: {itemsize}, Total Bytes: {nbytes}")
 
 # Entry point
 if __name__ == "__main__":
