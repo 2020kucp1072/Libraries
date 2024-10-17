@@ -160,6 +160,22 @@ def set_exclusive_or(arr1, arr2):
     """
     return np.setxor1d(arr1, arr2)
 
+def compare_arrays(arr1, arr2):
+    """
+    Description:
+        This function compares two arrays using numpy.
+    Parameters:
+        arr1: First array.
+        arr2: Second array.
+    Return:
+        Comparison results as a dictionary.
+    """
+    return {
+        'greater': arr1 > arr2,
+        'greater_equal': arr1 >= arr2,
+        'less': arr1 < arr2,
+        'less_equal': arr1 <= arr2,
+    }
 
 
 def main():
@@ -206,6 +222,10 @@ def main():
     log.info(f"Set Difference: {set_difference(arr1, arr2)}")
     # 14. Find the set exclusive or of two arrays
     log.info(f"Set Exclusive OR: {set_exclusive_or(arr1, arr2)}")
+    # 15. Compare two arrays
+    arr3 = np.array([1, 2, 3, 4])
+    arr4 = np.array([3, 2, 1, 0])
+    log.info(f"Array Comparison Results: {compare_arrays(arr3, arr4)}")
 
 # Entry point
 if __name__ == "__main__":
