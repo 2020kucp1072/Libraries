@@ -44,6 +44,16 @@ def reverse_array(arr):
         Reversed array.
     """
     return np.flip(arr)
+def create_border_array():
+    """
+    Description:
+        This function creates a 2D array with 1s on the border and 0s inside.
+    Return:
+        A 2D array with border of 1s.
+    """
+    arr = np.ones((5, 5))
+    arr[1:-1, 1:-1] = 0
+    return arr
 
 def main():
     # 1. Convert list to one-dimensional numpy array
@@ -57,6 +67,8 @@ def main():
     # 4. Reverse an array
     arr_to_reverse = np.arange(12, 38)
     log.info(f"Reversed array:\n{reverse_array(arr_to_reverse)}")
+    # 5. Create 2D array with 1 on the border and 0 inside
+    log.info(f"2D Array with border of 1:\n{create_border_array()}")
 
 # Entry point
 if __name__ == "__main__":
