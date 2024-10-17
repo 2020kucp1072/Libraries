@@ -230,6 +230,18 @@ def specific_array():
                      [1, 0, 0],
                      [1, 1, 0],
                      [1, 1, 1]])
+    
+def concatenate_arrays(arr1, arr2):
+    """
+    Description:
+        This function concatenates two 2-dimensional arrays.
+    Parameters:
+        arr1: First 2D array.
+        arr2: Second 2D array.
+    Return:
+        Concatenated 2D array.
+    """
+    return np.concatenate((arr1, arr2), axis=1)
 
 
 
@@ -292,6 +304,10 @@ def main():
     log.info(f"Diagonal Ones Array:\n{create_diagonal_ones()}")
     # 20. Create a specific pattern array
     log.info(f"Specific Array Pattern:\n{specific_array()}")
+    # 21. Concatenate two arrays
+    arr5 = np.array([[1, 2], [3, 4]])
+    arr6 = np.array([[5, 6], [7, 8]])
+    log.info(f"Concatenated Array:\n{concatenate_arrays(arr5, arr6)}")
 
 # Entry point
 if __name__ == "__main__":
