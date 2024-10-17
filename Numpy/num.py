@@ -101,6 +101,17 @@ def append_values(arr, values):
     """
     return np.append(arr, values)
 
+def real_imaginary_parts(arr):
+    """
+    Description:
+        This function finds the real and imaginary parts of a complex number array.
+    Parameters:
+        arr: Input array of complex numbers.
+    Return:
+        Tuple of real and imaginary parts.
+    """
+    return np.real(arr), np.imag(arr)
+
 def main():
     # 1. Convert list to one-dimensional numpy array
     original_list = [12.23, 13.32, 100, 36.32]
@@ -129,6 +140,11 @@ def main():
     # 9. Append values to an array
     arr_to_append = np.array([10, 20, 30])
     log.info(f"Array after appending values:\n{append_values(arr_to_append, [40, 50, 60, 70, 80, 90])}")
+    # 10. Find real and imaginary parts of complex numbers
+    complex_arr = np.array([1 + 0j, 0.707 + 0.707j])
+    real_part, imag_part = real_imaginary_parts(complex_arr)
+    log.info(f"Real Part: {real_part}, Imaginary Part: {imag_part}")
+
 # Entry point
 if __name__ == "__main__":
     main()
