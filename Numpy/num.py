@@ -124,6 +124,18 @@ def array_memory_info(arr):
     """
     return arr.size, arr.itemsize, arr.nbytes
 
+def common_values(arr1, arr2):
+    """
+    Description:
+        This function finds common values between two arrays.
+    Parameters:
+        arr1: First array.
+        arr2: Second array.
+    Return:
+        Array of common values.
+    """
+    return np.intersect1d(arr1, arr2)
+
 def main():
     # 1. Convert list to one-dimensional numpy array
     original_list = [12.23, 13.32, 100, 36.32]
@@ -160,6 +172,10 @@ def main():
     arr_info = np.array([1, 2, 3], dtype=np.float64)
     size, itemsize, nbytes = array_memory_info(arr_info)
     log.info(f"Array Info - Size: {size}, Item Size: {itemsize}, Total Bytes: {nbytes}")
+    # 12. Find common values between two arrays
+    arr1 = np.array([1, 2, 3, 4, 5])
+    arr2 = np.array([4, 5, 6, 7, 8])
+    log.info(f"Common Values: {common_values(arr1, arr2)}")
 
 # Entry point
 if __name__ == "__main__":
