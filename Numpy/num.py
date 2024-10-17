@@ -177,6 +177,17 @@ def compare_arrays(arr1, arr2):
         'less_equal': arr1 <= arr2,
     }
 
+def save_array_to_file(arr, filename):
+    """
+    Description:
+        This function saves a NumPy array to a text file.
+    Parameters:
+        arr: Input array.
+        filename: Output filename.
+    """
+    np.savetxt(filename, arr)
+
+
 
 def main():
     # 1. Convert list to one-dimensional numpy array
@@ -226,7 +237,8 @@ def main():
     arr3 = np.array([1, 2, 3, 4])
     arr4 = np.array([3, 2, 1, 0])
     log.info(f"Array Comparison Results: {compare_arrays(arr3, arr4)}")
-
+    # 16. Save array to file
+    save_array_to_file(arr3, 'array_output.txt')
 # Entry point
 if __name__ == "__main__":
     main()
