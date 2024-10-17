@@ -148,6 +148,19 @@ def set_difference(arr1, arr2):
     """
     return np.setdiff1d(arr1, arr2)
 
+def set_exclusive_or(arr1, arr2):
+    """
+    Description:
+        This function finds the set exclusive-or of two arrays.
+    Parameters:
+        arr1: First array.
+        arr2: Second array.
+    Return:
+        Array with unique values in only one of the arrays.
+    """
+    return np.setxor1d(arr1, arr2)
+
+
 
 def main():
     # 1. Convert list to one-dimensional numpy array
@@ -191,7 +204,9 @@ def main():
     log.info(f"Common Values: {common_values(arr1, arr2)}")
     # 13. Find the set difference of two arrays
     log.info(f"Set Difference: {set_difference(arr1, arr2)}")
- 
+    # 14. Find the set exclusive or of two arrays
+    log.info(f"Set Exclusive OR: {set_exclusive_or(arr1, arr2)}")
+
 # Entry point
 if __name__ == "__main__":
     main()
