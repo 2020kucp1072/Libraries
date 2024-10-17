@@ -186,6 +186,17 @@ def save_array_to_file(arr, filename):
         filename: Output filename.
     """
     np.savetxt(filename, arr)
+    
+def create_flattened_array(arr):
+    """
+    Description:
+        This function creates a contiguous flattened array.
+    Parameters:
+        arr: Input 2D array.
+    Return:
+        Flattened array.
+    """
+    return arr.flatten()
 
 
 
@@ -239,6 +250,10 @@ def main():
     log.info(f"Array Comparison Results: {compare_arrays(arr3, arr4)}")
     # 16. Save array to file
     save_array_to_file(arr3, 'array_output.txt')
+    # 17. Create a contiguous flattened array
+    two_d_array = np.array([[1, 2], [3, 4], [5, 6]])
+    log.info(f"Flattened Array: {create_flattened_array(two_d_array)}")
+
 # Entry point
 if __name__ == "__main__":
     main()
