@@ -278,6 +278,19 @@ def array_to_list(arr):
     """
     return arr.tolist()
 
+def print_with_precision(arr, precision):
+    """
+    Description:
+        This function prints array values with a given precision.
+    Parameters:
+        arr: Input array.
+        precision: Precision for printing.
+    Return:
+        None
+    """
+    np.set_printoptions(precision=precision)
+    log.info(arr)
+
 
 
 
@@ -351,7 +364,8 @@ def main():
     log.info(f"Array after multiplication:\n{multiply_elements(arr_info, 2)}")
     # 24. Convert array to list
     log.info(f"Array converted to List: {array_to_list(arr_info)}")
-
+    # 25. Print with specified precision
+    print_with_precision(arr_info, precision=2)
 
 # Entry point
 if __name__ == "__main__":
