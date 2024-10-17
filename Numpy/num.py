@@ -290,6 +290,18 @@ def print_with_precision(arr, precision):
     """
     np.set_printoptions(precision=precision)
     log.info(arr)
+    
+def suppress_scientific_notation(arr):
+    """
+    Description:
+        This function suppresses the use of scientific notation for small numbers in a NumPy array.
+    Parameters:
+        arr: Input array.
+    Return:
+        None
+    """
+    np.set_printoptions(suppress=True)
+    log.info(arr)
 
 
 
@@ -366,6 +378,9 @@ def main():
     log.info(f"Array converted to List: {array_to_list(arr_info)}")
     # 25. Print with specified precision
     print_with_precision(arr_info, precision=2)
+    # 26. Suppress scientific notation
+    suppress_scientific_notation(np.array([1e-10, 1e-8, 1e-6]))
+
 
 # Entry point
 if __name__ == "__main__":
