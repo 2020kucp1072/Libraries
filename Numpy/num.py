@@ -303,6 +303,18 @@ def suppress_scientific_notation(arr):
     np.set_printoptions(suppress=True)
     log.info(arr)
 
+def add_extra_column(arr, new_col):
+    """
+    Description:
+        This function adds an extra column to a NumPy array.
+    Parameters:
+        arr: Input 2D array.
+        new_col: New column to add.
+    Return:
+        New array with the extra column added.
+    """
+    return np.column_stack((arr, new_col))
+
 
 
 
@@ -380,6 +392,9 @@ def main():
     print_with_precision(arr_info, precision=2)
     # 26. Suppress scientific notation
     suppress_scientific_notation(np.array([1e-10, 1e-8, 1e-6]))
+    # 27. Add extra column to an existing array
+    extra_col = np.array([7, 8, 9])
+    log.info(f"Array with Extra Column:\n{add_extra_column(two_d_array, extra_col)}")
 
 
 # Entry point
