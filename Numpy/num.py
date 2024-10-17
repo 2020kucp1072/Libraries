@@ -315,6 +315,17 @@ def add_extra_column(arr, new_col):
     """
     return np.column_stack((arr, new_col))
 
+def remove_specific_elements(arr, indices):
+    """
+    Description:
+        This function removes specific elements from a NumPy array.
+    Parameters:
+        arr: Input array.
+        indices: Indices of elements to remove.
+    Return:
+        New array with specified elements removed.
+    """
+    return np.delete(arr, indices)
 
 
 
