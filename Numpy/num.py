@@ -72,7 +72,7 @@ def create_checkerboard():
     Return:
         An 8x8 checkerboard pattern.
     """
-    arr =np.zeros(8,8)
+    arr =np.zeros([8,8])
     arr[1::2,::2]=1
     arr[::2,1::2]=1
     return arr
@@ -219,6 +219,18 @@ def create_diagonal_ones():
     """
     return np.eye(3)
 
+def specific_array():
+    """
+    Description:
+        This function creates a specific array pattern.
+    Return:
+        The specified array pattern.
+    """
+    return np.array([[0, 0, 0],
+                     [1, 0, 0],
+                     [1, 1, 0],
+                     [1, 1, 1]])
+
 
 
 def main():
@@ -278,6 +290,8 @@ def main():
     log.info(f"Changed Array Data Type:\n{change_array_dtype(arr_info, np.int32)}")
     # 19. Create a diagonal array
     log.info(f"Diagonal Ones Array:\n{create_diagonal_ones()}")
+    # 20. Create a specific pattern array
+    log.info(f"Specific Array Pattern:\n{specific_array()}")
 
 # Entry point
 if __name__ == "__main__":
