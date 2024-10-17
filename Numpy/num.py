@@ -198,6 +198,19 @@ def create_flattened_array(arr):
     """
     return arr.flatten()
 
+def change_array_dtype(arr, new_type):
+    """
+    Description:
+        This function changes the data type of an array.
+    Parameters:
+        arr: Input array.
+        new_type: Desired data type.
+    Return:
+        New array with changed data type.
+    """
+    return arr.astype(new_type)
+
+
 
 
 def main():
@@ -253,7 +266,9 @@ def main():
     # 17. Create a contiguous flattened array
     two_d_array = np.array([[1, 2], [3, 4], [5, 6]])
     log.info(f"Flattened Array: {create_flattened_array(two_d_array)}")
-
+    # 18. Change array data type
+    log.info(f"Changed Array Data Type:\n{change_array_dtype(arr_info, np.int32)}")
+    
 # Entry point
 if __name__ == "__main__":
     main()
