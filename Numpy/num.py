@@ -77,6 +77,18 @@ def create_checkerboard():
     arr[::2,1::2]=1
     return arr
 
+def list_and_tuple_to_arrays(lst, tpl):
+    """
+    Description:
+        This function converts a list and a tuple into arrays.
+    Parameters:
+        lst: Input list.
+        tpl: Input tuple.
+    Return:
+        Tuple of arrays (from list and tuple).
+    """
+    return np.array(lst), np.array(tpl)
+
 def main():
     # 1. Convert list to one-dimensional numpy array
     original_list = [12.23, 13.32, 100, 36.32]
@@ -96,7 +108,12 @@ def main():
     log.info(f"Array with border of 0's:\n{add_border_zeros(existing_array)}")
     # 7. Create an 8x8 matrix with a checkerboard pattern
     log.info(f"Checkerboard Pattern:\n{create_checkerboard()}")
-
+    # 8. Convert list and tuple into arrays
+    lst = [1, 2, 3, 4, 5, 6, 7, 8]
+    tpl = (8, 4, 6, 1, 2, 3)
+    list_arr, tuple_arr = list_and_tuple_to_arrays(lst, tpl)
+    log.info(f"List to Array: {list_arr}")
+    log.info(f"Tuple to Array: {tuple_arr}")
 # Entry point
 if __name__ == "__main__":
     main()
