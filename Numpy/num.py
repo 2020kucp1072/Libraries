@@ -267,6 +267,17 @@ def multiply_elements(arr, factor):
     """
     return arr * factor
 
+def array_to_list(arr):
+    """
+    Description:
+        This function converts a NumPy array into a Python list structure.
+    Parameters:
+        arr: Input array.
+    Return:
+        Converted Python list.
+    """
+    return arr.tolist()
+
 
 
 
@@ -338,6 +349,8 @@ def main():
     log.info(f"Read-Only Array:\n{read_only_arr}")
     # 23. Multiply elements of an array
     log.info(f"Array after multiplication:\n{multiply_elements(arr_info, 2)}")
+    # 24. Convert array to list
+    log.info(f"Array converted to List: {array_to_list(arr_info)}")
 
 
 # Entry point
