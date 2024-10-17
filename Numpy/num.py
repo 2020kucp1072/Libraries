@@ -406,7 +406,8 @@ def main():
     # 27. Add extra column to an existing array
     extra_col = np.array([7, 8, 9])
     log.info(f"Array with Extra Column:\n{add_extra_column(two_d_array, extra_col)}")
-
+    # 28. Remove specific elements from an array
+    log.info(f"Array after removing elements:\n{remove_specific_elements(arr1, [1, 3])}")
 
 # Entry point
 if __name__ == "__main__":
