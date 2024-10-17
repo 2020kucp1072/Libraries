@@ -34,6 +34,17 @@ def null_vector():
     vec[5] = 11
     return vec
 
+def reverse_array(arr):
+    """
+    Description:
+        This function reverses the given array.
+    Parameters:
+        arr: Input array.
+    Return:
+        Reversed array.
+    """
+    return np.flip(arr)
+
 def main():
     # 1. Convert list to one-dimensional numpy array
     original_list = [12.23, 13.32, 100, 36.32]
@@ -43,6 +54,9 @@ def main():
     log.info(f"3x3 Matrix:\n{create_matrix()}")
     # 3. Create null vector of size 10 and update sixth value to 11
     log.info(f"Null Vector with sixth value updated:\n{null_vector()}")
+    # 4. Reverse an array
+    arr_to_reverse = np.arange(12, 38)
+    log.info(f"Reversed array:\n{reverse_array(arr_to_reverse)}")
 
 # Entry point
 if __name__ == "__main__":
