@@ -89,6 +89,18 @@ def list_and_tuple_to_arrays(lst, tpl):
     """
     return np.array(lst), np.array(tpl)
 
+def append_values(arr, values):
+    """
+    Description:
+        This function appends values to the end of the array.
+    Parameters:
+        arr: Input array.
+        values: Values to append.
+    Return:
+        Updated array after appending.
+    """
+    return np.append(arr, values)
+
 def main():
     # 1. Convert list to one-dimensional numpy array
     original_list = [12.23, 13.32, 100, 36.32]
@@ -114,6 +126,9 @@ def main():
     list_arr, tuple_arr = list_and_tuple_to_arrays(lst, tpl)
     log.info(f"List to Array: {list_arr}")
     log.info(f"Tuple to Array: {tuple_arr}")
+    # 9. Append values to an array
+    arr_to_append = np.array([10, 20, 30])
+    log.info(f"Array after appending values:\n{append_values(arr_to_append, [40, 50, 60, 70, 80, 90])}")
 # Entry point
 if __name__ == "__main__":
     main()
