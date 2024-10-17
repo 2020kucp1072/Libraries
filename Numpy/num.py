@@ -210,6 +210,14 @@ def change_array_dtype(arr, new_type):
     """
     return arr.astype(new_type)
 
+def create_diagonal_ones():
+    """
+    Description:
+        This function creates a 3D array with ones on the diagonal and zeros elsewhere.
+    Return:
+        3D diagonal ones array.
+    """
+    return np.eye(3)
 
 
 
@@ -268,7 +276,9 @@ def main():
     log.info(f"Flattened Array: {create_flattened_array(two_d_array)}")
     # 18. Change array data type
     log.info(f"Changed Array Data Type:\n{change_array_dtype(arr_info, np.int32)}")
-    
+    # 19. Create a diagonal array
+    log.info(f"Diagonal Ones Array:\n{create_diagonal_ones()}")
+
 # Entry point
 if __name__ == "__main__":
     main()
