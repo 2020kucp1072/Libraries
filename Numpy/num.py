@@ -243,6 +243,19 @@ def concatenate_arrays(arr1, arr2):
     """
     return np.concatenate((arr1, arr2), axis=1)
 
+def make_array_read_only(arr):
+    """
+    Description:
+        This function makes an array immutable (read-only).
+    Parameters:
+        arr: Input array.
+    Return:
+        Read-only array.
+    """
+    arr.setflags(write=False)
+    return arr
+
+
 
 
 def main():
@@ -308,6 +321,9 @@ def main():
     arr5 = np.array([[1, 2], [3, 4]])
     arr6 = np.array([[5, 6], [7, 8]])
     log.info(f"Concatenated Array:\n{concatenate_arrays(arr5, arr6)}")
+    # 22. Make an array read-only
+    read_only_arr = make_array_read_only(arr_info.copy())
+    log.info(f"Read-Only Array:\n{read_only_arr}")
 
 # Entry point
 if __name__ == "__main__":
