@@ -65,6 +65,18 @@ def add_border_zeros(arr):
     """
     return np.pad(arr, pad_width=1, mode='constant', constant_values=0)
 
+def create_checkerboard():
+    """
+    Description:
+        This function creates an 8x8 checkerboard pattern.
+    Return:
+        An 8x8 checkerboard pattern.
+    """
+    arr =np.zeros(8,8)
+    arr[1::2,::2]=1
+    arr[::2,1::2]=1
+    return arr
+
 def main():
     # 1. Convert list to one-dimensional numpy array
     original_list = [12.23, 13.32, 100, 36.32]
@@ -82,6 +94,9 @@ def main():
     # 6. Add border of 0's around an existing array
     existing_array = np.array([[1, 1, 1], [1, 0, 1], [1, 1, 1]])
     log.info(f"Array with border of 0's:\n{add_border_zeros(existing_array)}")
+    # 7. Create an 8x8 matrix with a checkerboard pattern
+    log.info(f"Checkerboard Pattern:\n{create_checkerboard()}")
+
 # Entry point
 if __name__ == "__main__":
     main()
